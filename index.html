@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P5.js Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+</head>
+<body>
+    <div class="player-container">
+        <div class="album-cover" id="visualizer-container">
+            <!-- p5.js will create canvas here -->
+        </div>
+        
+        <div class="song-info">
+            <div id="song-title">Select a song</div>
+            <div class="time-info">
+                <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+            </div>
+        </div>
+        
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+        </div>
+        
+        <div class="control-panel">
+            <div class="main-controls">
+                <button id="prev-btn" class="control-btn">⏮</button>
+                <button id="play-btn" class="control-btn">▶</button>
+                <button id="pause-btn" class="control-btn">⏸</button>
+                <button id="stop-btn" class="control-btn">⏹</button>
+                <button id="next-btn" class="control-btn">⏭</button>
+            </div>
+            
+            <div class="volume-container">
+                <span class="volume-icon">🔊</span>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
+            </div>
+            
+            <div class="panning-container">
+                <span>L</span>
+                <input type="range" id="panning-slider" min="-1" max="1" step="0.01" value="0">
+                <span>R</span>
+            </div>
+        </div>
+        
+        <div class="playlist-container">
+            <h3>Playlist</h3>
+            <ul id="playlist">
+                <!-- Update these with your actual audio files -->
+                <li data-src="audio1.mp3" class="playlist-item">Piano Miano - LeMer</li>
+                <li data-src="audio2.mp3" class="playlist-item">Snowy Mouwy - Artist Dantist</li>
+                <li data-src="audio3.mp3" class="playlist-item">Abrakadabra - Jinn</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="sketch.js"></script>
+</body>
+</html>
